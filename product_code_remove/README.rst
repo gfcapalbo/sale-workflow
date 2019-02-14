@@ -6,8 +6,8 @@
 Product code Remove
 ===================
 
-Removes default/supplier code brackets from the beginning of products and product descriptions.
-
+Removes default/supplier code brackets from the beginning 
+of products and product descriptions on both sale order lines and invoice lines.
 
 Usage
 =====
