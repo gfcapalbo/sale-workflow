@@ -9,18 +9,6 @@ Product code Remove
 Removes default/supplier code brackets from the beginning 
 of products and product descriptions on both sale order lines and invoice lines.
 
-Usage
-=====
-
-To use this module, you need to:
-
-#. go to ...
-.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
-    :alt: Try me on Runbot
-    :target: https://runbot.odoo-community.org/runbot/{repo_id}/10.0
-
-.. repo_id is available in https://github.com/OCA/maintainer-tools/blob/master/tools/repos_with_ids.txt
-
 
 Bug Tracker
 ===========
