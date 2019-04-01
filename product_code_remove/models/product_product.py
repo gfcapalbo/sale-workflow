@@ -9,8 +9,15 @@ class ProductProduct(models.Model):
 
     @api.multi
     def name_get(self):
-        res = []
         for this in self:
-            return_val = super(ProductProduct, self).name_get()
-            res.append((this.id, (this.name)))
-        return res or return_val
+            res = super(ProductProduct, this).name_get()
+            return_val_split = res[0][1].split()
+            for element in return_val_split:
+                possible_codes = [this.default_code]
+                # TODO If needed add supplier codes to possible codes
+                for possible_code in possible_codes:
+                    if element == "[%s]" % possible_code:
+                        return_val_split.remove(element)
+            return_val = ' '.join(return_val_split)
+            res_new = [(x[0], return_val) for x in res]
+        return res_new
