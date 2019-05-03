@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2019 Therp BV <https://therp.nl>
+# Copyright 2019 Therp BV <https://therp.nl>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 from odoo import api,  models
 
@@ -18,6 +18,6 @@ class ProductProduct(models.Model):
                 for possible_code in possible_codes:
                     if element == "[%s]" % possible_code:
                         return_val_split.remove(element)
-            return_val = ' '.join(return_val_split)
-            res_new = [(x[0], return_val) for x in res]
-        return res_new
+                return_val = ' '.join(return_val_split)
+                res = [(x[0], return_val) for x in res]
+            return res
