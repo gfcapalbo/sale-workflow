@@ -36,7 +36,7 @@ class SaleOrder(models.Model):
     @api.multi
     @api.depends('order_line.priority')
     def _compute_priority(self):
-        for order in self:
+        for order in self.filtered(lambda x: x.order_line):
             priority = order.mapped('order_line.priority')
             # max cannot deal with booleans in python3
             order.priority = max([x for x in priority if x]) or '1'
