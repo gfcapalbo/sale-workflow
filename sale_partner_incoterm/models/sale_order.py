@@ -26,7 +26,6 @@ class Sale(models.Model):
     @api.multi
     @api.onchange('partner_id')
     def onchange_partner_id(self):
-        res = super(Sale, self).onchange_partner_id()
+        super(Sale, self).onchange_partner_id()
         if self.partner_id.sale_incoterm_id:
-            res['value']['incoterm'] = self.partner_id.sale_incoterm_id.id
-        return res
+            self.update({'incoterm': self.partner_id.sale_incoterm_id.id})
